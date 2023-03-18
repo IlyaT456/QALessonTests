@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -39,9 +40,13 @@ public class BasePages {
         return $("span[class='e1ys5m360 e106ikdt0 css-175fskm e1gjr6xo0']");
     }
 
-    public SelenideElement login() { return $("input[name='login']");}
+    public SelenideElement login() {
+        return $("input[name='login']");
+    }
 
-    public SelenideElement password() { return $("input[type='password']");}
+    public SelenideElement password() {
+        return $("input[type='password']");
+    }
 
     public SelenideElement aByText(String text) {
         return  $$("a").find(text(text));
@@ -49,6 +54,10 @@ public class BasePages {
 
     public SelenideElement buttonByTextContains(String text) {
         return $x("//button[contains(., '" + text + "')]");
+    }
+
+    public SelenideElement cooket() {
+        return $x("//span[text()='Я согласен']");
     }
 
 

@@ -60,6 +60,9 @@ public class BaseSteps {
 
     @Step("Выбираем нужную позиции в панели каталога")
     public BaseSteps selectDesiredPositionInTheCatalogPanel(String text) {
+        if(basePages.cooket().exists()) {
+            basePages.cooket().click();
+        }
         basePages.categorePanel(text).click();
         return this;
     }

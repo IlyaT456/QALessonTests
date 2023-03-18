@@ -7,7 +7,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class Properties {
     public void settingsSelenoid() {
-        //настройки selenoid  clean test -Dselenide.remote=https://user1:1234@selenoid.autotests.cloud/wd/hub
+        //настройки selenoid clean test -Dselenide.remote=https://user1:1234@selenoid.autotests.cloud/wd/hub
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         Configuration.driverManagerEnabled = true;
         DesiredCapabilities capabilities = new DesiredCapabilities();
