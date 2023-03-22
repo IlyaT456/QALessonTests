@@ -4,13 +4,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import steps.BaseSteps;
 
-public class SportMasterTests extends BaseTest {
+public class CitilinkTests extends BaseTest {
     BaseSteps selectors = new BaseSteps();
-
-    @BeforeEach
-    public void before() {
-
-    }
 
     @Test
     @DisplayName("Проверка работы строки поиска")

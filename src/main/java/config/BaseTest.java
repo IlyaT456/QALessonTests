@@ -17,6 +17,7 @@ public class BaseTest {
         properties.settingsSelenoid();
         properties.settingsBrowser();
         properties.settingAllure();
+        //properties.beforeEach();
     }
 
 

@@ -27,4 +27,8 @@ public class Properties {
         // настройки для работы Allure
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
+
+//    public void beforeEach() {
+//        Configuration.baseUrl = "https://www.citilink.ru/";
+//    }
 }

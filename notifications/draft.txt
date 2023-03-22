@@ -1,0 +1,15 @@
+﻿Telegram username: @QALessenBot
+Telegram token: 6196197811:AAH_g54vftbeHa3HdNTFLAa9qDt6wDHUuzM
+Chat id: -1001902774425
+
+curl https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/getUpdates | jq .message.chat.id
+curl https://api.telegram.org/bot6196197811:AAH_g54vftbeHa3HdNTFLAa9qDt6wDHUuzM/getUpdates | jq .message.chat.id
+
+curl -X POST  -H 'Content-Type: application/json' -d '{"chat_id": "123456789", "text": "This is a test from curl", "disable_notification": true}' https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage
+curl -X POST  -H 'Content-Type: application/json' -d '{"chat_id": "-1001902774425", "text": "This is a test from Welcome!", "disable_notification": true}' https://api.telegram.org/bot6196197811:AAH_g54vftbeHa3HdNTFLAa9qDt6wDHUuzM/sendMessage
+
+//команда для запуска с notifications (Run jar with notifications)
+java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.2.1.jar
+
+
+
