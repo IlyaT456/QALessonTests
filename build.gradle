@@ -39,10 +39,12 @@ dependencies {
             'org.slf4j:slf4j-simple:2.0.6',
             'io.qameta.allure:allure-selenide:2.19.0',
             'org.selenide:selenide-selenoid:2.3.5',
+            'org.aeonbits.owner:owner:1.0.12'
     )
 }
 
 test {
+    systemProperties(System.getProperties())
     useJUnitPlatform()
 }
 

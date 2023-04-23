@@ -10,16 +10,6 @@ import static io.qameta.allure.Allure.attachment;
 public class BaseTest {
 
     Attachments attachments = new Attachments();
-    Properties properties = new Properties();
-
-    @BeforeEach
-    void configureBeForeEach() {
-        properties.settingsSelenoid();
-        properties.settingsBrowser();
-        properties.settingAllure();
-        //properties.beforeEach();
-    }
-
 
     @AfterEach
     void addAttachments() {
@@ -28,6 +18,5 @@ public class BaseTest {
         attachments.pageSource();
         attachments.browserConsoleLogs();
         attachments.addVideo();
-
     }
 }
