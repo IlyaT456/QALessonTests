@@ -8,17 +8,21 @@ import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class ProjectConfiguration {
-    static WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
-    public static void configure() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        Configuration.baseUrl = config.getBaseUrl();
-        Configuration.browser = config.getBaseBrowser();
-        Configuration.browserVersion = config.getBrowserVersion();
-        Configuration.browserSize = config.getBrowserSize();
+    private final WebDriverConfig webConfig;
 
-        String remoteUrl = config.getRemoteUrl();
-        if (!Strings.isNullOrEmpty(remoteUrl)) {
-            Configuration.remote = remoteUrl;
+    public ProjectConfiguration(WebDriverConfig webConfig) {
+        this.webConfig = webConfig;
+    }
+
+    public void configure() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        Configuration.baseUrl = webConfig.getBaseUrl();
+        Configuration.browser = webConfig.getBaseBrowser();
+        Configuration.browserVersion = webConfig.getBrowserVersion();
+        Configuration.browserSize = webConfig.getBrowserSize();
+
+        if (webConfig.isRemote()) {
+            Configuration.remote = webConfig.getRemoteUrl();
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("enableVNC", true);
             capabilities.setCapability("enableVideo", true);

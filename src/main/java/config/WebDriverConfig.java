@@ -6,7 +6,9 @@ import org.aeonbits.owner.Config;
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
         "system:properties",
-        "classpath:${env}.properties"
+        "classpath:${env}.properties",
+        "file:~/${env}.properties",
+        "file:./${env}.properties"
 })
 public interface WebDriverConfig extends Config {
     @Key("baseUrl")
@@ -27,4 +29,8 @@ public interface WebDriverConfig extends Config {
 
     @Key("remoteUrl")
     String getRemoteUrl();
+
+    @Key("isRemote")
+    @DefaultValue("false")
+    Boolean isRemote();
 }
