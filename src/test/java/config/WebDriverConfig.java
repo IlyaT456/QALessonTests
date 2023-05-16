@@ -28,9 +28,10 @@ public interface WebDriverConfig extends Config {
     String getBrowserVersion();
 
     @Key("remoteUrl")
+    @DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")
     String getRemoteUrl();
 
     @Key("isRemote")
-    @DefaultValue("false")
+    @DefaultValue("true")
     Boolean isRemote();
 }
