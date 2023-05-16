@@ -75,7 +75,6 @@ public class BaseSteps {
     }
 
     @Step("Проверяем наличие добавленого товара в корзину")
-    //проверка на коректность 2 раза текста
     public BaseSteps checkAddedProductToCart(String text) {
         basePages.addedProductInCart(text).shouldBe(exist, Duration.ofSeconds(40)).shouldBe(text(text));
         return this;
