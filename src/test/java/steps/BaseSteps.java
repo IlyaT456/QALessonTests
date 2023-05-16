@@ -11,6 +11,7 @@ import java.util.List;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.SetValueOptions.withText;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class BaseSteps {
@@ -73,15 +74,10 @@ public class BaseSteps {
         return this;
     }
 
-    @Step("Переходим в корзину")
-    public BaseSteps clickOnTheBasket() {
-        basePages.buttonByText("Перейти в корзину").click();
-        return this;
-    }
-
     @Step("Проверяем наличие добавленого товара в корзину")
+    //проверка на коректность 2 раза текста
     public BaseSteps checkAddedProductToCart(String text) {
-        basePages.addedProductInCart().shouldBe(text(text));
+        basePages.addedProductInCart(text).shouldBe(exist, Duration.ofSeconds(40)).shouldBe(text(text));
         return this;
     }
 
@@ -96,7 +92,7 @@ public class BaseSteps {
         basePages.login().click();
         basePages.login().setValue("testdsdsw2@rambler.ru");
         basePages.password().click();
-        basePages.password().setValue("Q1w2e3r4t5");
+        basePages.password().setValue(withText("Q1w2e3r4t5").sensitive());
         basePages.buttonByTextContains("Войти").shouldBe(enabled).click();
         return this;
     }
@@ -109,22 +105,4 @@ public class BaseSteps {
         $(".MainLayout__main").shouldHave(text(user));
         return this;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

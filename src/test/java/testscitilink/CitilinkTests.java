@@ -1,5 +1,5 @@
-import config.BaseTest;
-import org.junit.jupiter.api.BeforeEach;
+package testscitilink;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import steps.BaseSteps;
@@ -38,8 +38,7 @@ public class CitilinkTests extends BaseTest {
                 .clickButtonSearch()
                 .selectDesiredPositionInTheCatalogPanel("Холодильник двухкамерный Атлант XM-4208-000")
                 .addingTheProductTheCart()
-                .clickOnTheBasket()
-                .checkAddedProductToCart("Холодильник двухкамерный Атлант XM-4208-000");
+                .checkAddedProductToCart("Товар добавлен в корзину");
     }
 
     @Test

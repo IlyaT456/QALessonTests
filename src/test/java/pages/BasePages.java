@@ -1,8 +1,6 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-
-import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -36,8 +34,9 @@ public class BasePages {
         return $x("//div[contains(@class, 'app-catalog-oacxam') and . = '" + text + "']");
     }
 
-    public SelenideElement addedProductInCart() {
-        return $("span[class='e1ys5m360 e106ikdt0 css-175fskm e1gjr6xo0']");
+    public SelenideElement addedProductInCart(String text) {
+        return $x("//span[text()='"+ text +"']");
+        //return $x("//span[text()='Холодильник двухкамерный Атлант XM-4208-000 белый']");
     }
 
     public SelenideElement login() {

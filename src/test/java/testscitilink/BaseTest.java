@@ -1,11 +1,13 @@
-package config;
+package testscitilink;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
+import config.ConfigReader;
+import config.ProjectConfiguration;
+import config.WebDriverConfig;
 import helpers.Attachments;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 
 import static com.codeborne.selenide.Selenide.webdriver;
 import static io.qameta.allure.Allure.attachment;
