@@ -1,5 +1,6 @@
 package testscitilink;
 
+import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import steps.BaseSteps;
@@ -41,13 +42,14 @@ public class CitilinkTests extends BaseTest {
                 .checkAddedProductToCart("Товар добавлен в корзину");
     }
 
-    @Test
+    @Test()
     @DisplayName("Авторизация на сайте")
     public void AuthorizationTheWebsite() {
         selectors.openMainPage()
                 .clickingTheLogInTab()
                 .authorization()
                 .checkingTheUserProfile("Петр");
+        Selenide.clearBrowserCookies();
     }
 
 }

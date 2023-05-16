@@ -70,7 +70,7 @@ public class BaseSteps {
 
     @Step("Добавляем товар в корзину")
     public BaseSteps addingTheProductTheCart() {
-        basePages.buttonByText("В корзину").click();
+        basePages.buttonByText("В корзину").shouldBe(exist, Duration.ofSeconds(40)).click();
         return this;
     }
 
@@ -82,7 +82,7 @@ public class BaseSteps {
 
     @Step("Наживаем на вкладку войти")
     public BaseSteps clickingTheLogInTab() {
-        basePages.userPanel("Войти").click();
+        basePages.userPanel("Войти").shouldBe(exist, Duration.ofSeconds(40)).click();
         return this;
     }
 
