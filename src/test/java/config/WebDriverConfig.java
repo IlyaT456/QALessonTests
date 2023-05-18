@@ -2,7 +2,6 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
         "system:properties",
@@ -10,6 +9,7 @@ import org.aeonbits.owner.Config;
         "file:~/${env}.properties",
         "file:./${env}.properties"
 })
+
 public interface WebDriverConfig extends Config {
     @Key("baseUrl")
     @DefaultValue("https://www.citilink.ru/")
@@ -24,7 +24,7 @@ public interface WebDriverConfig extends Config {
     String getBrowserSize();
 
     @Key("version")
-    @DefaultValue("101.0")
+    @DefaultValue("100.0")
     String getBrowserVersion();
 
     @Key("remoteUrl")
@@ -32,6 +32,6 @@ public interface WebDriverConfig extends Config {
     String getRemoteUrl();
 
     @Key("isRemote")
-    @DefaultValue("true")
+    @DefaultValue("false")
     Boolean isRemote();
 }
