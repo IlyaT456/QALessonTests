@@ -32,6 +32,6 @@ public interface WebDriverConfig extends Config {
     String getRemoteUrl();
 
     @Key("isRemote")
-    @DefaultValue("false")
+    @DefaultValue("true")
     Boolean isRemote();
 }
